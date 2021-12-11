@@ -6,9 +6,9 @@ int	main(int argc, char **argv)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
 	{
-		for (size_t j = 1; (int)j < argc; j++)
+		for (int j = 1; j < argc; j++)
 			for (size_t i = 0; i < std::strlen(argv[j]); i++)
-				std::cout << (char)std::toupper(argv[j][i]);
+				std::cout << static_cast<char>(std::toupper(argv[j][i]));
 			std::cout << " ";
 		std::cout << std::endl;
 	}
