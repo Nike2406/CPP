@@ -19,6 +19,7 @@ class Phonebook {
 		void	greetings(void);
 		int		addContact(int id);
 		void	searchContact(void);
+		void	printHim(int id);
 };
 
 #endif

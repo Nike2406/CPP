@@ -1,6 +1,7 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
-# include "Phonebook.hpp"
+# include <iostream>
+# include <iomanip>
 
 # define CONT_LENGTH 10
 
@@ -12,6 +13,7 @@ class Contact {
 		void	createContact(void);
 		bool	isEmptyField(void);
 		void	printContact(int id);
+		void	printFullContact(void);
 
 	private:
 		std::string	_firstName;

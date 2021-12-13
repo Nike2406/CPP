@@ -61,10 +61,16 @@ void	Contact::printContact(int id) {
 			this->_nickname.substr(0, CONT_LENGTH - 1) << ".";
 	else
 		std::cout << "|" << std::setw(CONT_LENGTH) << this->_nickname;
-	std::cout << std::endl;
+	std::cout << "|" << std::endl;
 }
 
-
+void	Contact::printFullContact(void) {
+	std::cout << "FirstName: " << this->_firstName << std::endl;
+	std::cout << "LastName: "  << this->_lastName << std::endl;
+	std::cout << "NickName: "  << this->_nickname << std::endl;
+	std::cout << "PhoneNumber: " << this->_phoneNumber << std::endl;
+	std::cout << "DarkestSecret: " << this->_darkestSecret << std::endl;
+}
 
 
 
