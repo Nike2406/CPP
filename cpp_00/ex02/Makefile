@@ -3,7 +3,7 @@ NAME = account
 CC = c++
 FL = -Wall -Wextra -Werror
 
-SRCS = test.cpp Account.cpp
+SRCS = tests.cpp Account.cpp
 HEADERS = Account.hpp
 
 OBJS = $(SRCS:.cpp=.o)
