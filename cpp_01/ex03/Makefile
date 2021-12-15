@@ -3,7 +3,8 @@ NAME = zombie
 CC = g++
 FL = -Wall -Wextra -Werror
 
-SRCS =	main.cpp
+SRCS =	$(wildcard *.cpp)
+HEADERS = $(wildcard *.hpp)
 
 OBJS = $(SRCS:.cpp=.o)
 

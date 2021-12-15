@@ -1,10 +1,21 @@
-#include "Zombie.hpp"
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::cout;
+using std::endl;
+using std::cin;
 
 int		main() {
-	Zombie *all = zombieHorde(5, "Shit");
-	for (int i = 0; i < 5; i++) {
-		all[i].announce();
-	}
-	delete [] all;
+	string str = "HI THIS IS BRAIN";
+	string *stringPTR = &str;
+	string &stringRef = str;
+
+	cout << stringPTR << endl;
+	cout << &stringRef << endl;
+
+	cout << *stringPTR << endl;
+	cout << stringRef << endl;
+
 	return (0);
 }
