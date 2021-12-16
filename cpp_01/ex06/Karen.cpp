@@ -32,18 +32,17 @@ void	Karen::complain(string level) {
 	void	(Karen::*fptr[])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
 	bool	input[] = {level == "debug", level == "info", level == "warning", level == "error"};
 	while(!input[++i]);
-	switch (i)
-	{
-	case 0:
-		(this->*fptr[0])();
-	case 1:
-		(this->*fptr[1])();
-	case 2:
-		(this->*fptr[2])();
-	case 3:
-		(this->*fptr[3])();
-		break;
-	default:
-		cout << "[ Probably complaining about insignificant problems ]\n";
+	switch (i) {
+		case 0:
+			(this->*fptr[0])();
+		case 1:
+			(this->*fptr[1])();
+		case 2:
+			(this->*fptr[2])();
+		case 3:
+			(this->*fptr[3])();
+			break;
+		default:
+			cout << "[ Probably complaining about insignificant problems ]\n";
 	}
 }
