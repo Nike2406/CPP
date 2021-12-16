@@ -1,13 +1,10 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(string name)
-{
+HumanB::HumanB(string name) {
 	this->_name = name;
 }
 
-HumanB::~HumanB()
-{
-}
+HumanB::~HumanB() {}
 
 void	HumanB::setWeapon(Weapon &herWeapon) {
 	_herWeapon = &herWeapon;

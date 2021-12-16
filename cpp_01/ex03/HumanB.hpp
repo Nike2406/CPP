@@ -1,8 +1,7 @@
 #pragma once
 #include "Weapon.hpp"
 
-class HumanB
-{
+class HumanB {
 private:
 	string	_name;
 	Weapon	*_herWeapon;

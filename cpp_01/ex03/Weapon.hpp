@@ -6,8 +6,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
-class Weapon
-{
+class Weapon {
 private:
 	string	_type;
 public:
