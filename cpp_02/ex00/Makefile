@@ -1,4 +1,4 @@
-NAME = zombie
+NAME = fixed
 
 CC = g++
 FL = -Wall -Wextra -Werror
