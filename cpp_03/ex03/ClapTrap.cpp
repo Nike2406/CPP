@@ -43,7 +43,7 @@ ClapTrap::~ClapTrap()
 	cout << "ClapTrap destructor called\n";
 }
 
-void	ClapTrap::attack(string const & target) {
+void	ClapTrap::attack(string const & target) const {
 	cout << "ClapTrap " << _name << " attack " << target \
 		 << ", causing " << _attackDamage << " of damage!\n";
 }
@@ -51,9 +51,17 @@ void	ClapTrap::attack(string const & target) {
 void	ClapTrap::takeDamage(unsigned int amount) {
 	cout << "ClapTrap " << _name << " takes " << amount \
 		 << " of damage!\n";
+	_hitpoints -= amount;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	cout << "ClapTrap " << _name << " repiered " << amount \
 		 << " health points!\n";
+	_hitpoints += amount;
+}
+
+void	ClapTrap::attack(ClapTrap & oth) const{
+	cout << "ClapTrap " << _name << " attack " << oth._name \
+		 << ", causing " << _attackDamage << " of damage!\n";
+	oth.takeDamage(_attackDamage);
 }
