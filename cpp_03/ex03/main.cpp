@@ -1,19 +1,11 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main( void ) {
-	ClapTrap a("Genshiro");
-	ScavTrap b("Nani");
-	FragTrap c("Slowpoke");
+	DiamondTrap def;
+	DiamondTrap d("monster");
+	d.attack(def);
 
-	b.guardGate();
-
-	a.attack(b);
-	b.attack(a);
-	a.beRepaired(10);
-	b.beRepaired(20);
-	c.highFivesGuys();
-	a.attack(c);
-	b.attack(c);
-	return 0;
+	d.whoAmI();
 }
