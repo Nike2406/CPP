@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void): ClapTrap()
+FragTrap::FragTrap(void): ClapTrap("Empty", 100, 100, 30)
 {
 	_name = "Epmty";
 	_hitpoints = 100;
@@ -10,13 +10,10 @@ FragTrap::FragTrap(void): ClapTrap()
 	cout << "FragTrap constructor called\n";
 }
 
-FragTrap::FragTrap(string name) : ClapTrap()
+FragTrap::FragTrap(string name) : ClapTrap(name, 100, 100, 30)
 {
-	_name = name;
 	_hitpoints = 100;
-	_energyPoints = 100;
 	_attackDamage = 30;
-
 	cout << "FragTrap constructor called\n";
 }
 
