@@ -8,7 +8,6 @@ using std::endl;
 
 class ClapTrap
 {
-	friend class ScavTrap;
 protected:
 	string	_name;
 	int		_hitpoints;
@@ -22,8 +21,7 @@ public:
 	ClapTrap const& operator=(ClapTrap const &);
 	virtual ~ClapTrap();
 
-	void	virtual attack(string const & target) const;
-	void	virtual attack(ClapTrap & oth) const;
+	void	attack(string const & target) const;
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 };

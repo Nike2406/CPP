@@ -30,12 +30,6 @@ void	ScavTrap::attack(string const & target) const {
 		 << ", causing " << _attackDamage << " of damage!\n";
 }
 
-void	ScavTrap::attack(ClapTrap & oth) const{
-	cout << "ScavTrap " << _name << " attack " << oth._name \
-		 << ", causing " << _attackDamage << " of damage!\n";
-	oth.takeDamage(_attackDamage);
-}
-
 void	ScavTrap::guardGate(void) {
 	cout << "I am the King now! .... or just a misrable gate keeper...\n";
 }

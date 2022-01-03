@@ -5,7 +5,7 @@
 int main( void ) {
 	DiamondTrap def;
 	DiamondTrap d("monster");
-	d.attack(def);
+	d.attack(def.getName());
 
 	d.whoAmI();
 }

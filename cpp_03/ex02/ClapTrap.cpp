@@ -38,6 +38,10 @@ ClapTrap const& ClapTrap::operator=(ClapTrap const& assign) {
 	return *this;
 }
 
+string	ClapTrap::getName() const {
+	return _name;
+}
+
 ClapTrap::~ClapTrap()
 {
 	cout << "ClapTrap destructor called\n";
@@ -58,10 +62,4 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	cout << "ClapTrap " << _name << " repiered " << amount \
 		 << " health points!\n";
 	_hitpoints += amount;
-}
-
-void	ClapTrap::attack(ClapTrap & oth) const{
-	cout << "ClapTrap " << _name << " attack " << oth._name \
-		 << ", causing " << _attackDamage << " of damage!\n";
-	oth.takeDamage(_attackDamage);
 }

@@ -10,6 +10,5 @@ public:
 	~ScavTrap(void);
 
 	void	attack(string const & target) const;
-	void	attack(ClapTrap & oth) const;
 	void	guardGate(void);
 };

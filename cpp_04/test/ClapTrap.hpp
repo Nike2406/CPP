@@ -8,21 +8,19 @@ using std::endl;
 
 class ClapTrap
 {
-protected:
+private:
 	string	_name;
-	int		_hitpoints;
+	int		_hipoints;
 	int		_energyPoints;
-	int		_attackDamage;
+	int		_atackDamage;
 public:
 	ClapTrap(void);
 	ClapTrap(string name);
-	ClapTrap(string name, int hitpoints, int energyPoints, int attackDamage);
 	ClapTrap(ClapTrap const &);
 	ClapTrap const& operator=(ClapTrap const &);
-	string	getName() const;
-	virtual ~ClapTrap();
+	~ClapTrap();
 
-	void	attack(string const & target) const;
+	void	attack(string const & target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 };
