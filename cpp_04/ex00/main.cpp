@@ -1,9 +1,24 @@
-#include "ClapTrap.hpp"
-
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
 int main( void ) {
-	ClapTrap a("Ceila");
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	const WrongAnimal* w = new WrongCat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << w->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	w->makeSound();
+	meta->makeSound();
 
-	a.attack("Phona");
+	delete meta;
+	delete j;
+	delete i;
+	delete w;
+
 	return 0;
 }

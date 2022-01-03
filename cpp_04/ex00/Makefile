@@ -1,4 +1,4 @@
-NAME = clapTrap
+NAME = animal
 
 CC = g++
 FL = -Wall -Wextra -Werror
