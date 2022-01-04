@@ -15,8 +15,8 @@ public:
 	WrongAnimal(string name);
 	WrongAnimal(WrongAnimal const &);
 	WrongAnimal const& operator=(WrongAnimal const &);
-	~WrongAnimal();
+	virtual ~WrongAnimal();
 
-	void	makeSound(void) const;
+	virtual void	makeSound(void) const;
 	string			getType(void) const;
 };
