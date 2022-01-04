@@ -1,4 +1,4 @@
-NAME = animal
+NAME = material
 
 CC = g++
 FL = -g -Wall -Wextra -Werror

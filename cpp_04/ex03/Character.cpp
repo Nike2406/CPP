@@ -58,11 +58,11 @@ void	Character::equip(AMateria* m) {
 		cout << RED << "equip error!" << DEFAULT << endl;
 		return ;
 	} else {
-		for (int i = 0; i < BAG_SIZE; i++) {
-			cout << _name << CYAN << " takes " << DEFAULT << m->getType() << endl;
-			_bag[i] = m;
-			return ;
-		}
+		for (int i = 0; i < BAG_SIZE && _bag[i]; i++)
+			if (_bag[i] == m)
+				return ;
+		_bag[_num++ % (BAG_SIZE - 1)] = m;
+		cout << _name << CYAN << " takes " << DEFAULT << m->getType() << endl;
 	}
 	cout << "Nothing to take for " << _name << endl;
 }
@@ -75,6 +75,7 @@ void	Character::unequip(int idx) {
 	else {
 		cout << _name << " unequip " << _bag[idx]->getType() << endl;
 		_bag[idx] = NULL;
+		_num = idx;
 	}
 }
 

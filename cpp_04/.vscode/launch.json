@@ -8,7 +8,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "${workspaceFolder}/ex01/animal",
+			"program": "${workspaceFolder}/ex03/material",
 			"args": [],
 			"cwd": "${workspaceFolder}"
 		}

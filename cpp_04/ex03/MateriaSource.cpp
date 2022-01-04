@@ -37,14 +37,12 @@ void	MateriaSource::learnMateria(AMateria* m) {
 }
 
 AMateria	*MateriaSource::createMateria(std::string const & type) {
-	for (int i = 0; i < SOURCES; i++) {
+	for (int i = 0; i < SOURCES && _source[i]; i++) {
 		if (type == _source[i]->getType()) {
 			cout << GREEN << "Materia have been created!" << DEFAULT << endl;
 			return _source[i]->clone();
-		} else {
-			cout << YELLOW << "Materia not found" << DEFAULT << endl;
-			return NULL;
 		}
 	}
-	return (NULL);
+	cout << YELLOW << "Materia not found" << DEFAULT << endl;
+	return NULL;
 }
