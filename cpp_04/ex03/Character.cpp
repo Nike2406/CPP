@@ -23,9 +23,10 @@ Character::Character(Character const & copy) {
 	this->_name = copy._name;
 	this->_num = copy._num;
 	for (int i = 0; i < BAG_SIZE; i++) {
-		if (this->_bag[i])
-			delete this->_bag[i];
-		this->_bag[i] = copy._bag[i];
+		if (copy._bag[i])
+			this->_bag[i] = copy._bag[i]->clone();
+		else
+			this->_bag[i] = NULL;
 	}
 }
 
@@ -34,9 +35,12 @@ Character const& Character::operator=(Character const& assign) {
 	this->_name = assign._name;
 	this->_num = assign._num;
 	for (int i = 0; i < BAG_SIZE; i++) {
-		if (this->_bag[i])
+		if (this->_bag[i]) {
 			delete this->_bag[i];
-		this->_bag[i] = assign._bag[i];
+			this->_bag[i] = assign._bag[i]->clone();
+		}
+		else
+			this->_bag[i] = NULL;
 	}
 	return *this;
 }
@@ -59,10 +63,11 @@ void	Character::equip(AMateria* m) {
 		return ;
 	} else {
 		for (int i = 0; i < BAG_SIZE && _bag[i]; i++)
-			if (_bag[i] == m)
+			if (_bag[i]->getType() == m->getType())
 				return ;
 		_bag[_num++ % (BAG_SIZE - 1)] = m;
 		cout << _name << CYAN << " takes " << DEFAULT << m->getType() << endl;
+		return ;
 	}
 	cout << "Nothing to take for " << _name << endl;
 }

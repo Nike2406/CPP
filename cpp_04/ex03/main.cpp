@@ -4,7 +4,7 @@
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
 
-int main( void ) {
+void foo() {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -20,5 +20,10 @@ int main( void ) {
 	delete bob;
 	delete me;
 	delete src;
+}
+
+int main( void ) {
+	foo();
+	while(2);
 	return 0;
 }
