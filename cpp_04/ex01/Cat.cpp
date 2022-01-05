@@ -2,6 +2,7 @@
 
 Cat::Cat() : Animal("Cat")
 {
+	_catPtr = new Brain("Some idea of cat!");
 	cout << "Default Cat constructor called" << endl;
 }
 
@@ -12,14 +13,17 @@ Cat::Cat(string str) : Animal("Cat")
 }
 
 Cat::Cat(Cat const & tmp) {
-	this->_type = tmp._type;
-	*(this->_catPtr) = *(tmp._catPtr);
+	_catPtr = NULL;
+	*this = tmp;
 	cout << "Cat copy called\n";
 }
 
 Cat const& Cat::operator=(Cat const& assign) {
+	if (_catPtr)
+		delete _catPtr;
+	 _catPtr = new Brain;
 	this->_type = assign._type;
-		*(this->_catPtr) = *(assign._catPtr);
+	*(this->_catPtr) = *(assign._catPtr);
 	cout << "Cat [=] operator called\n";
 	return *this;
 }

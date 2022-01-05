@@ -3,7 +3,7 @@
 
 AMateria::AMateria(std::string const & type) : _type(type)
 {
-	std::cout << "AMateria constructor called" << std::endl;
+	std::cout << "AMateria " << GREEN << "constructor" << DEFAULT << " called" << std::endl;
 }
 
 AMateria::AMateria(const AMateria & copy)
@@ -13,7 +13,7 @@ AMateria::AMateria(const AMateria & copy)
 
 AMateria::~AMateria()
 {
-	std::cout << "AMateria destructor called" << std::endl;
+	std::cout << "AMateria " << RED << "destructor" << DEFAULT << " called" << std::endl;
 }
 
 AMateria & AMateria::operator= (const AMateria & other)

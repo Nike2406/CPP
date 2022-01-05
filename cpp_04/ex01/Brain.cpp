@@ -13,14 +13,14 @@ Brain::Brain(string str) {
 }
 
 Brain::Brain(Brain const & tmp) {
-	*this = tmp;
 	cout << "Brain copy called\n";
+	*this = tmp;
 }
 
 Brain & Brain::operator=(Brain const& assign) {
+	cout << "Brain [=] operator called\n";
 	for (int i = 0; i < IDEAS; i++)
 		this->_ideas[i] = assign._ideas[i];
-	cout << "Brain [=] operator called\n";
 	return *this;
 }
 

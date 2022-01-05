@@ -13,12 +13,15 @@ Dog::Dog(string str) : Animal("Dog")
 }
 
 Dog::Dog(Dog const & tmp) {
-	_dogPtr = new Brain;
+	_dogPtr = NULL;
 	*this = tmp;
 	cout << "Dog copy called\n";
 }
 
 Dog const& Dog::operator=(Dog const& assign) {
+	if (_dogPtr)
+		delete _dogPtr;
+	_dogPtr = new Brain;
 	this->_type = assign._type;
 	*(this->_dogPtr) = *(assign._dogPtr);
 	cout << "Dog [=] operator called\n";
