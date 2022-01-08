@@ -67,9 +67,13 @@ const char *Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("The grade is too low!");
 }
 
+// Methods
+
 ostream&	operator<<(ostream &out, const Bureaucrat &bur) {
-	out << CYAN << bur.getName() << ", bureaucrat grade " << bur.getGrade() << DEFAULT;
+	out << bur.getName() << ", bureaucrat grade " << bur.getGrade();
 	return (out);
 }
 
-
+void	signForm() {
+		cout << BR_RED << bur.getName() << " cannot sign  " << this->_name << "because his grade is too low." << DEFAULT << endl;
+}

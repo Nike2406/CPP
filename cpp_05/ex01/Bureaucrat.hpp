@@ -53,6 +53,7 @@ using std::endl;
 using std::string;
 using std::exception;
 using std::ostream;
+using std::boolalpha;
 
 class Bureaucrat
 {
@@ -70,6 +71,7 @@ public:
 	void	gradeIncrement();
 	void	gradeDecrement();
 
+	// Exeptions
 	class GradeTooHighException : public exception {
 		public:
 			GradeTooHighException();

@@ -38,7 +38,7 @@ int	main() {
 		cout << ex.what() << endl;
 	}
 
-	Bureaucrat c("Petrovich", 151);
+	// Bureaucrat c("Petrovich", 151);
 
 	return (0);
 }

@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "termcolor.hpp"
+#include "Form.hpp"
 
 int	main() {
 	try
@@ -38,7 +38,41 @@ int	main() {
 		cout << ex.what() << endl;
 	}
 
-	Bureaucrat c("Petrovich", 151);
+	// Bureaucrat c("Petrovich", 151);
+
+	cout << "----------------------" << endl;
+
+	try
+	{
+		Form b("f1", 0, 15); // FAIL
+		Form c(b);
+		cout << b << endl;
+		cout << c << endl;
+	}
+	catch (exception & ex)
+	{
+		cout<< ex.what() << endl;
+	}
+
+	try
+	{
+		Form b("f1", 100, 151); // FAIL
+		cout << b << endl;
+	}
+	catch (exception & ex)
+	{
+		cout<< ex.what()<< endl;
+	}
+
+	try
+	{
+		Form b("f1", 100, 151); // FAIL
+		cout << b << endl;
+	}
+	catch (exception & ex)
+	{
+		cout<< ex.what()<< endl;
+	}
 
 	return (0);
 }
