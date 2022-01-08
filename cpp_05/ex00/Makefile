@@ -1,4 +1,4 @@
-NAME = animal
+NAME = Bureaucrat
 
 CC = g++
 FL = -Wall -Wextra -Werror
