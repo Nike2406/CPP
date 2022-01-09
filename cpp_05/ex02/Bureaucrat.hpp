@@ -75,6 +75,7 @@ public:
 	void	gradeDecrement();
 
 	void	signForm(Form &form);
+	void	executeForm(Form const & form);
 
 	// Exeptions
 	class GradeTooHighException : public exception {

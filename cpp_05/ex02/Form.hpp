@@ -15,14 +15,15 @@ public:
 	);
 	Form(Form const & copy);
 	Form const& operator=(Form const &);
-	~Form();
+	virtual ~Form();
 
 	string	getName() const;
 	int		getGradeToSign() const;
 	int		getGradeToExecute() const;
 	bool	getSigned() const;
 
-	void	beSigned(Bureaucrat &bur);
+	void			beSigned(Bureaucrat &bur);
+	virtual void	execute(Bureaucrat const & executor) const = 0;
 
 	// Exeptions
 	class GradeTooHighException : public exception {

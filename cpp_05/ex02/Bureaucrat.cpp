@@ -93,3 +93,19 @@ void	Bureaucrat::signForm(Form &form) {
 			" because his grade is too low." << DEFAULT << endl;
 	}
 }
+
+void	Bureaucrat::executeForm(Form const & form) {
+	try
+	{
+		form.execute(*this);
+		cout << BR_GREEN << this->getName() << " executes "
+			<< form.getName() << DEFAULT << endl;
+	}
+	catch(const std::exception& e)
+	{
+		cout << BR_RED << this->getName() << " couldn't execute "
+			<< form.getName() << " because of " << e.what()
+			<< DEFAULT << endl;
+	}
+
+}
