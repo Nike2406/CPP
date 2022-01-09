@@ -44,7 +44,7 @@ int	main() {
 
 	try
 	{
-		Form b("f1", 0, 15); // FAIL
+		Form b("f1", 0, 15);
 		Form c(b);
 		cout << b << endl;
 		cout << c << endl;
@@ -54,9 +54,11 @@ int	main() {
 		cout<< ex.what() << endl;
 	}
 
+	cout << "----------------------" << endl;
+
 	try
 	{
-		Form b("f1", 100, 151); // FAIL
+		Form b("f1", 100, 151);
 		cout << b << endl;
 	}
 	catch (exception & ex)
@@ -64,15 +66,19 @@ int	main() {
 		cout<< ex.what()<< endl;
 	}
 
+	cout << "----------------------" << endl;
+
 	try
 	{
-		Form b("f1", 100, 151); // FAIL
+		Form b("f1", 100, 151);
 		cout << b << endl;
 	}
 	catch (exception & ex)
 	{
 		cout<< ex.what()<< endl;
 	}
+
+	cout << "----------------------" << endl;
 
 	cout << endl;
 	Form b("f1", 100, 15);
@@ -80,15 +86,19 @@ int	main() {
 	b2.signForm(b);
 	cout << endl << b << endl;
 
-	cout << endl;
-	Form c("f2", 100, 15); // подписываем
-	Bureaucrat c2("Valeriy", 100);
-	c2.signForm(c);
-	c2.signForm(c); // нельзя второй раз подписать
-	cout << endl << c << endl;
+	cout << "----------------------" << endl;
 
 	cout << endl;
-	Form e("f3", 100, 15); // подписываем
+	Form c("f2", 100, 15);
+	Bureaucrat c2("Valeriy", 100);
+	c2.signForm(c);
+	c2.signForm(c);
+	cout << endl << c << endl;
+
+	cout << "----------------------" << endl;
+
+	cout << endl;
+	Form e("f3", 100, 15);
 	Bureaucrat e3("Baiden", 101);
 	e3.signForm(e);
 	cout << endl << e << endl;
