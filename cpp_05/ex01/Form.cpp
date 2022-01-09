@@ -32,7 +32,6 @@ Form::~Form()
 string	Form::getName() const {
 	return (this->_name);
 }
-
 int		Form::getGradeToSign() const {
 	return (this->_gradeToSign);
 }
@@ -62,7 +61,7 @@ ostream&	operator<<(ostream &out, const Form &form) {
 	out << "Form name: " << form.getName()
 	<< "; Grade to sign: " << form.getGradeToSign() <<
 	"; Grade to execute: " << form.getGradeToExecute() <<
-	"; Signed: " << boolalpha << form.getGradeToSign() <<
+	"; Signed: " << boolalpha << form.getSigned() <<
 	";";
 	return (out);
 }
@@ -76,9 +75,9 @@ Form::GradeTooHighException::GradeTooHighException() {}
 Form::GradeTooHighException::~GradeTooHighException() throw() {}
 
 const char *Form::GradeTooHighException::what() const throw() {
-	return ("The grade is too high!");
+	return ("The grade of form is too high!");
 }
 
 const char *Form::GradeTooLowException::what() const throw() {
-	return ("The grade is too low!");
+	return ("The grade of form is too low!");
 }

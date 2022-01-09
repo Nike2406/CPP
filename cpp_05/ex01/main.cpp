@@ -82,6 +82,7 @@ int	main() {
 
 	cout << endl;
 	Form b("f1", 100, 15);
+	cout << endl << b << endl;
 	Bureaucrat b2("Milan", 10);
 	b2.signForm(b);
 	cout << endl << b << endl;
@@ -92,6 +93,7 @@ int	main() {
 	Form c("f2", 100, 15);
 	Bureaucrat c2("Valeriy", 100);
 	c2.signForm(c);
+	cout << endl << c << endl;
 	c2.signForm(c);
 	cout << endl << c << endl;
 

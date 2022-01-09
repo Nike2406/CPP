@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 // Canonical
 
@@ -55,6 +56,8 @@ void	Bureaucrat::gradeDecrement() {
 	_grade++;
 }
 
+// Exceptions
+
 Bureaucrat::GradeTooLowException::GradeTooLowException() {}
 Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
 
@@ -69,9 +72,40 @@ const char *Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("The grade is too low!");
 }
 
+// Methods
+
 ostream&	operator<<(ostream &out, const Bureaucrat &bur) {
-	out << CYAN << bur.getName() << ", bureaucrat grade " << bur.getGrade() << DEFAULT;
+	out << bur.getName() << ", bureaucrat grade " << bur.getGrade();
 	return (out);
 }
 
+void	Bureaucrat::signForm(Form &form) {
+	if (form.getSigned() == true) {
+		cout << BR_RED << this->_name << " cannot sign " << form.getName() <<
+			" because this form already signed." << DEFAULT << endl;
+		return ;
+	}
+	try {
+		form.beSigned(*this);
+	}
+	catch (exception &ex) {
+		cout << BR_RED << this->_name << " cannot sign " << form.getName() <<
+			" because his grade is too low." << DEFAULT << endl;
+	}
+}
 
+void	Bureaucrat::executeForm(Form const & form) {
+	try
+	{
+		form.execute(*this);
+		cout << BR_GREEN << this->getName() << " executes "
+			<< form.getName() << DEFAULT << endl;
+	}
+	catch(const std::exception& e)
+	{
+		cout << BR_RED << this->getName() << " couldn't execute "
+			<< form.getName() << " because of " << e.what()
+			<< DEFAULT << endl;
+	}
+
+}

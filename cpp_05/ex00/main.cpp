@@ -1,5 +1,4 @@
 #include "Bureaucrat.hpp"
-#include "termcolor.hpp"
 
 int	main() {
 	try
@@ -23,9 +22,9 @@ int	main() {
 	{
 		Bureaucrat b("Vasiliy", 150);
 		cout << b << endl;
-		b.gradeDecrement();
-		cout << b << endl;
 		b.gradeIncrement();
+		cout << b << endl;
+		b.gradeDecrement();
 		cout << b << endl;
 		b.gradeDecrement();
 		cout << b << endl;
