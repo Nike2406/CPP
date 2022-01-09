@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 // Canonical
 
@@ -44,14 +45,18 @@ string	Bureaucrat::getName() const {
 void	Bureaucrat::gradeIncrement() {
 	if (_grade == 1)
 		throw Bureaucrat::GradeTooHighException();
+	cout << BR_YELLOW << "Bureaucrat grade increment" << DEFAULT << endl;
 	_grade--;
 }
 
 void	Bureaucrat::gradeDecrement() {
 	if (_grade == 150)
 		throw Bureaucrat::GradeTooLowException();
+	cout << BR_YELLOW << "Bureaucrat grade decrement" << DEFAULT << endl;
 	_grade++;
 }
+
+// Exceptions
 
 Bureaucrat::GradeTooLowException::GradeTooLowException() {}
 Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
@@ -74,6 +79,17 @@ ostream&	operator<<(ostream &out, const Bureaucrat &bur) {
 	return (out);
 }
 
-void	signForm() {
-		cout << BR_RED << bur.getName() << " cannot sign  " << this->_name << "because his grade is too low." << DEFAULT << endl;
+void	Bureaucrat::signForm(Form &form) {
+	if (form.getSigned() == true) {
+		cout << BR_RED << this->_name << " cannot sign " << form.getName() <<
+			" because this form already signed." << DEFAULT << endl;
+		return ;
+	}
+	try {
+		form.beSigned(*this);
+	}
+	catch (exception &ex) {
+		cout << BR_RED << this->_name << " cannot sign " << form.getName() <<
+			" because his grade is too low." << DEFAULT << endl;
+	}
 }

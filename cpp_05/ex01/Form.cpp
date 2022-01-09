@@ -46,7 +46,10 @@ bool	Form::getSigned() const {
 // Methods
 
 void	Form::beSigned(Bureaucrat &bur) {
-	if (bur.getGrade() >= this->_gradeToSign){
+	if (this->getSigned() == true) {
+		return;
+	}
+	if (bur.getGrade() <= this->_gradeToSign){
 		this->_signed = true;
 		cout << BR_GREEN << bur.getName() << " signs " << this->_name << DEFAULT << endl;
 	}
@@ -57,7 +60,7 @@ void	Form::beSigned(Bureaucrat &bur) {
 
 ostream&	operator<<(ostream &out, const Form &form) {
 	out << "Form name: " << form.getName()
-	<< " ; Grade to sign: " << form.getGradeToSign() <<
+	<< "; Grade to sign: " << form.getGradeToSign() <<
 	"; Grade to execute: " << form.getGradeToExecute() <<
 	"; Signed: " << boolalpha << form.getGradeToSign() <<
 	";";

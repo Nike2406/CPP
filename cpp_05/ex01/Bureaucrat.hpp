@@ -55,6 +55,8 @@ using std::exception;
 using std::ostream;
 using std::boolalpha;
 
+class Form;
+
 class Bureaucrat
 {
 private:
@@ -68,8 +70,11 @@ public:
 
 	string	getName() const;
 	int		getGrade() const;
+
 	void	gradeIncrement();
 	void	gradeDecrement();
+
+	void	signForm(Form &form);
 
 	// Exeptions
 	class GradeTooHighException : public exception {

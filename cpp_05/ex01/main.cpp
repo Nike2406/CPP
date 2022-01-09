@@ -74,5 +74,27 @@ int	main() {
 		cout<< ex.what()<< endl;
 	}
 
+	cout << endl;
+	Form b("f1", 100, 15);
+	Bureaucrat b2("Milan", 10);
+	b2.signForm(b);
+	cout << endl << b << endl;
+
+	cout << endl;
+	Form c("f2", 100, 15); // подписываем
+	Bureaucrat c2("Valeriy", 100);
+	c2.signForm(c);
+	c2.signForm(c); // нельзя второй раз подписать
+	cout << endl << c << endl;
+
+	cout << endl;
+	Form e("f3", 100, 15); // подписываем
+	Bureaucrat e3("Baiden", 101);
+	e3.signForm(e);
+	cout << endl << e << endl;
+	cout << e3 << endl;
+	e3.gradeIncrement();
+	e3.signForm(e);
+
 	return (0);
 }

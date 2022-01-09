@@ -1,7 +1,7 @@
 NAME = Bureaucrat
 
 CC = g++
-FL = -Wall -Wextra -Werror
+FL = -Wall -Wextra -Werror -g
 
 SRCS =	$(wildcard *.cpp)
 HEADERS = $(wildcard *.hpp)
