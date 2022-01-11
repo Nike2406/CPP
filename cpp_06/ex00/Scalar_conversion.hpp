@@ -51,39 +51,22 @@
 using std::cout;
 using std::endl;
 using std::string;
-using std::exception;
-using std::ostream;
 
-class Bureaucrat
+class Scalar_conversion
 {
 private:
-	string	_name;
-	int		_grade;
+	char		*_str;
+	char		_conChar;
+	// int			_convInt;
+	// float		_convFloat;
+	// double		_convDouble;
+
+	void	getCommon(char *str);
 public:
-	Bureaucrat(string name, int range);
-	Bureaucrat(Bureaucrat const &);
-	Bureaucrat const& operator=(Bureaucrat const &);
-	~Bureaucrat();
+	Scalar_conversion(char *str);
+	Scalar_conversion(Scalar_conversion const &);
+	Scalar_conversion const& operator=(Scalar_conversion const &);
+	~Scalar_conversion();
 
-	string	getName() const;
-	int		getGrade() const;
-	void	gradeIncrement();
-	void	gradeDecrement();
-
-	class GradeTooHighException : public exception {
-		public:
-			GradeTooHighException();
-			~GradeTooHighException() throw();
-
-			const char *what() const throw();
-	};
-	class GradeTooLowException : public exception {
-		public:
-			GradeTooLowException();
-			~GradeTooLowException() throw();
-
-			const char *what() const throw();
-	};
+	void	getChar(char *str);
 };
-
-ostream&	operator<<(ostream &out, const Bureaucrat &bur);

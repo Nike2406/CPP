@@ -1,7 +1,7 @@
-NAME = Bureaucrat
+NAME = scalar_conversion
 
 CC = g++
-FL = -Wall -Wextra -Werror
+FL = -g -Wall -Wextra -Werror
 
 SRCS =	$(wildcard *.cpp)
 HEADERS = $(wildcard *.hpp)
