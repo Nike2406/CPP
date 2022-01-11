@@ -10,7 +10,7 @@ int	main() {
 	Intern a;
 	try
 	{
-	Form * f = a.makeForm("Presidential form", "Raw");
+	Form * f = a.makeForm("Robotomy form", "Raw");
 
 	std:: cout << *f << std::endl;
 	me.signForm(*f);
