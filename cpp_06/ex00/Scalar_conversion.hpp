@@ -56,10 +56,10 @@ class Scalar_conversion
 {
 private:
 	char		*_str;
-	char		_conChar;
-	// int			_convInt;
-	// float		_convFloat;
-	// double		_convDouble;
+	char		_convChar;
+	long		_convInt;
+	float		_convFloat;
+	double		_convDouble;
 
 	void	getCommon(char *str);
 public:
@@ -68,5 +68,9 @@ public:
 	Scalar_conversion const& operator=(Scalar_conversion const &);
 	~Scalar_conversion();
 
+	// void	checkArgs(char *str);
 	void	getChar(char *str);
+	void	getInt(char *str);
+	void	getFloat(char *str);
+	void	getDouble(char *str);
 };

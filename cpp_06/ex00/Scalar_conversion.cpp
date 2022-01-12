@@ -26,17 +26,55 @@ Scalar_conversion::~Scalar_conversion()
 // Methods
 
 void	Scalar_conversion::getCommon(char *str) {
+	// checkArgs(str);
 	getChar(str);
+	getInt(str);
+	getFloat(str);
+	getDouble(str);
 }
+
+// void	checkArgs(char *str) {
+// 	if (!strcmp(nan))
+// }
 
 void	Scalar_conversion::getChar(char *str) {
 	try {
-		_conChar = static_cast<char>(std::stoi(str));
-		if (!isprint(_conChar))
-			cout << "char: " << BR_YELLOW << "Non displayable" << DEFAULT << endl;
+		_convChar = static_cast<char>(std::stoi(str));
+		if (!isprint(_convChar))
+			cout << "char: \t" << BR_YELLOW << "Non displayable" << DEFAULT << endl;
 		else
-			cout << "char: " << BR_GREEN << _conChar << DEFAULT << endl;
+			cout << "char: \t" << BR_GREEN << _convChar << DEFAULT << endl;
 	} catch (std::exception &ex) {
-		cout << "char: " << BR_RED << "impossible" << DEFAULT << endl;
+		cout << "char: \t" << BR_RED << "impossible" << DEFAULT << endl;
+	}
+}
+
+void	Scalar_conversion::getInt(char *str) {
+	try {
+		_convInt = static_cast<int>(std::stoi(str));
+		cout << "int: \t" << BR_GREEN << _convInt << DEFAULT << endl;
+	} catch (std::exception &ex) {
+		cout << "int: \t" << BR_RED << "impossible" << DEFAULT << endl;
+	}
+}
+
+void	Scalar_conversion::getFloat(char *str) {
+	try {
+		_convFloat = static_cast<float>(strtod(str, 0));
+		cout << "float: \t" << BR_GREEN;
+		cout << std::fixed;
+		cout.precision(1);
+		cout << _convFloat << "f" << DEFAULT << endl;
+	} catch (std::exception &ex) {
+		cout << "float: \t" << BR_RED << "impossible" << DEFAULT << endl;
+	}
+}
+
+void	Scalar_conversion::getDouble(char *str) {
+	try {
+		_convDouble = strtod(str, 0);
+		cout << "double: " << BR_GREEN << _convDouble << DEFAULT << endl;
+	} catch (std::exception &ex) {
+		cout << "double: " << BR_RED << "impossible" << DEFAULT << endl;
 	}
 }
