@@ -7,26 +7,24 @@ using std::endl;
 using std::string;
 
 template <typename T>
-void	swap(T &a, T &b) {
-	T	tmp;
-
-	tmp = a;
-	a = b;
-	b = tmp;
+void	iter(T *arr, int size, void (*f)(T &t)) {
+	for (int i = 0; i < size; ++i)
+		f(arr[i]);
 }
 
 template <typename T>
-T	min(T &a, T &b) {
-	if (a < b)
-		return (a);
-	else
-		return (b);
+void	increment(T &i) {
+	i = i + 1;
 }
 
 template <typename T>
-T	max(T &a, T &b) {
-	if (a > b)
-		return (a);
-	else
-		return (b);
+void	decrement(T &i) {
+	i = i - 1;
+}
+
+template <typename T>
+void	print_array(T *arr, int size) {
+	for (int i = 0; i < size; ++i)
+		cout << arr[i] << " ";
+	cout << endl;
 }
