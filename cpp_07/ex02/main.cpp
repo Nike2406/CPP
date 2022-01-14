@@ -6,13 +6,14 @@ int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
+    cout << "Done";
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
-        cout << "number [" << i << "] = " << value << " ";
+        // cout << "number [" << i << "] = " << value << " ";
     }
     cout << endl;
     //SCOPE
@@ -29,6 +30,7 @@ int main(int, char**)
             return 1;
         }
     }
+    cout << numbers[0] << endl;
     try
     {
         numbers[-2] = 0;
