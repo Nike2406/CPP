@@ -1,4 +1,4 @@
-NAME = a_few_functions
+NAME = array
 
 CC = g++
 FL = -g -Wall -Wextra -Werror
