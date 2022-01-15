@@ -1,4 +1,4 @@
-NAME = span
+NAME = mutantstack
 
 CC = g++
 FL = -g -Wall -Wextra -Werror

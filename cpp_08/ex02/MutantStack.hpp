@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <stack>
 
 // default colors
 #define DEFAULT	"\033[0m"
@@ -55,31 +56,14 @@ using std::find;
 using std::vector;
 using std::list;
 using std::exception;
+using std::stack;
 
-class Span
+template <typename T>
+class MutantStack : public stack<T>
 {
 private:
-	unsigned int	_size;
-	vector<int>		_arr;
+	/* data */
 public:
-	Span(unsigned int n);
-	Span(const Span &);
-	Span const& operator=(Span const &copy);
-	~Span();
-
-	unsigned int	getSize();
-
-	void			addNumber(int num);
-	unsigned int	shortestSpan();
-	unsigned int	longestSpan();
-
-	class SpanException: public exception {
-		private:
-			string	_err;
-		public:
-			SpanException(string err) : _err(err) {};
-			virtual ~SpanException() throw() {};
-
-			const char *what() const throw() {return (_err.c_str());};
-	};
+	MutantStack() {};
+	~MutantStack() {};
 };
