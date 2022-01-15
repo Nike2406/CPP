@@ -23,5 +23,11 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+	// while (s.size())
+	// {
+	// 	std::cout << s.top() << std::endl;
+	// 	s.pop();
+	// }
 	return (0);
 }
