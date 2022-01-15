@@ -1,8 +1,8 @@
 #pragma once
 
 #include <iostream>
-#include <string>
-#include <exception>
+#include <vector>
+#include <list>
 
 // default colors
 #define DEFAULT	"\033[0m"
@@ -51,26 +51,22 @@
 using std::cout;
 using std::endl;
 using std::string;
+using std::find;
+using std::vector;
+using std::list;
+using std::exception;
 
-class Scalar_conversion
-{
-private:
-	char		*_str;
-	char		_convChar;
-	long		_convInt;
-	float		_convFloat;
-	double		_convDouble;
-
-	void	getCommon(char *str);
-public:
-	Scalar_conversion(char *str);
-	Scalar_conversion(Scalar_conversion const &);
-	Scalar_conversion const& operator=(Scalar_conversion const &);
-	~Scalar_conversion();
-
-	// void	checkArgs(char *str);
-	void	getChar(char *str);
-	void	getInt(char *str);
-	void	getFloat(char *str);
-	void	getDouble(char *str);
+class NotFound : public exception {
+	virtual const char *what () const throw() {
+		return ("Not found\n");
+	}
 };
+
+template<typename T>
+typename T::iterator easyfind(T &container, int toFind)
+{
+	typename T::iterator ret = find(container.begin(), container.end(), toFind);
+	if (ret != container.end())
+		return ret;
+	throw NotFound();
+}

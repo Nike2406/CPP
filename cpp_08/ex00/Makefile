@@ -1,4 +1,4 @@
-NAME = scalar_conversion
+NAME = easyfind
 
 CC = g++
 FL = -g -Wall -Wextra -Werror
